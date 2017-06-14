@@ -1,0 +1,21 @@
+.footerLogo {
+  width: 75px;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer {
+  padding: 3rem 1.5rem 2rem;
+}
+
+.hero.is-info {
+  background-color: #3F51B5;
+}
+
+.hero.is-info .tabs.is-boxed li.is-active a{
+  color: #3F51B5;
+}
+
+.indigo {
+  color: #3F51B5;
+}

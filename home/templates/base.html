@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>ieee</title>
+
+  {% load static %}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'home.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="hero is-info is-large">
+    <div class="hero-head">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+            <a class="nav-item">
+                <img src="https://s3.ap-south-1.amazonaws.com/intellectualdude/Photos/Vellore_Institute_of_Technology_seal.svg+white.png" width="25px">
+              </a>
+          </div>
+          <span class="nav-toggle">
+              <span></span>
+          <span></span>
+          <span></span>
+          </span>
+          <div class="nav-right nav-menu">
+            <a class="nav-item is-active">
+                Home
+              </a>
+            <a class="nav-item" href="{% url 'timeline' %}">
+                Timeline
+              </a>
+            <a class="nav-item">
+                Guidelines
+              </a>
+            <span class="nav-item">
+                <a class="button is-info is-inverted">
+                  <span class="icon">
+                    <i class="material-icons indigo">assignment</i>
+                  </span>
+            <span class="indigo">Register</span>
+            </a>
+            </span>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+            IEEE 2018 | April 5-6
+          </h1>
+        <h2 class="subtitle">
+            Vellore Institute of Technology, Chennai
+          </h2>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <nav class="tabs is-boxed is-fullwidth">
+        <div class="container">
+          <ul>
+            <li class="is-active"><a>Overview</a></li>
+            <li><a href="{% url 'timeline' %}">Timeline</a></li>
+            <li><a>Speakers</a></li>
+            <li><a>Publication</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  {% block content %}
+
+  {% endblock %}
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        I love pizza 🍕 <span class="indigo">Vellore Institute of Technology</span>, Chennai
+        <br><img class="footerLogo" src="https://s3.ap-south-1.amazonaws.com/intellectualdude/Photos/Vellore_Institute_of_Technology_seal.svg+copy.png">
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery and the wonderful things -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+</body>
+
+</html>
