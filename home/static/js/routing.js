@@ -1,4 +1,19 @@
-//g Following the commonJS practice of exports
+/*
+--------------------
+    Instructions
+--------------------
+
+1. Set an array of routes 
+Route - name for the section/div you want to show
+2. Pass it to the route.init() function;
+3. Create container with id #route-container
+4. Inisde that, create children with class 'route'
+    with an id of ROUTENAME-route
+5. For the default div, name it as `home-route`.
+6. For links,
+    Use the class `route` and
+    set the attribute `data-go-to` to a valid route name.
+*/
 
 const router = (function router(){
     var exports = {};
