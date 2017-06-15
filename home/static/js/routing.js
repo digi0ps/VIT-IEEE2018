@@ -104,6 +104,9 @@ const router = (function router(){
         // Sets up routing
         checkURI(routes);
         activateRouteLinks();
+        window.onpopstate = function() {
+            checkURI(routes);
+        };
     }
 
     return exports;
