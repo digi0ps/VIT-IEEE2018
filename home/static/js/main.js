@@ -1,4 +1,3 @@
 // Initialize routing
-const routes = ["timeline"]
-
+const routes = ["timeline", "contact"]
 router.init(routes)

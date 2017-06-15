@@ -9,3 +9,7 @@ def home(request):
 
 def timeline(request):
     return render(request, "base.html", )
+
+
+def contact(request):
+    return render(request, "base.html", )
