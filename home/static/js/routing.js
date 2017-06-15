@@ -3,7 +3,7 @@
     Instructions
 --------------------
 
-1. Set an array of routes 
+1. Set an array of routes
 Route - name for the section/div you want to show
 2. Pass it to the route.init() function;
 3. Create container with id #route-container
@@ -80,7 +80,7 @@ const router = (function router(){
             console.error(to, " route not declared.");
             return;
         }
-        // prepend and append '/' 
+        // prepend and append '/'
         var path = "/" + to + "/";
         // Add exception for home
         if (to === "home")
