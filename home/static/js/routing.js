@@ -1,4 +1,4 @@
-// Following the commonJS practice of exports
+//g Following the commonJS practice of exports
 
 const router = (function router(){
     var exports = {};
@@ -46,15 +46,50 @@ const router = (function router(){
 
     const setActiveNav = function(path) {
         const navClass = "." + path + "-nav";
+        var navElement = $(navClass);
         // Remove the previous is-active
         $(".router-navs").children('li').removeClass("is-active");
         // Set the new is-active
-        $(navClass).addClass("is-active");
+        if (!navElement.length){
+            console.error("No navbar items found.");
+            return;
+        }
+        navElement.addClass("is-active");
+        // end of routing chain;
+        return true;
+    }
+
+    const routeHandler = function(to) {
+        // Return if the given route is not there
+        if (routes.indexOf(to) === -1 && to !== "home"){
+            console.error(to, " route not declared.");
+            return;
+        }
+        // prepend and append '/' 
+        var path = "/" + to + "/";
+        // Add exception for home
+        if (to === "home")
+            path = "/";
+        history.pushState(null, null, path);
+        checkURI(routes);
+    }
+
+    const activateRouteLinks = function(routes) {
+        const routeLinks = $(".route-link");
+        if (!routeLinks.length)
+            return;
+        routeLinks.on("click", function(e) {
+            e.preventDefault();
+            var to = $(this).data("go-to");
+            routeHandler(to);
+        });
     }
 
     exports.init = function(routes) {
         // Sets up routing
         checkURI(routes);
+        activateRouteLinks();
     }
+
     return exports;
 })();
