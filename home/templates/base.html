@@ -68,9 +68,9 @@
     <div class="hero-foot">
       <nav class="tabs is-boxed is-fullwidth">
         <div class="container">
-          <ul>
-            <li class="is-active"><a>Overview</a></li>
-            <li><a href="{% url 'timeline' %}">Timeline</a></li>
+          <ul class="router-navs">
+            <li class="home-nav"><a>Overview</a></li>
+            <li class="timeline-nav"><a>Timeline</a></li>
             <li><a>Speakers</a></li>
             <li><a>Publication</a></li>
             <li><a>Contact</a></li>
@@ -79,11 +79,11 @@
       </nav>
     </div>
   </section>
-
-  {% block content %}
-
-  {% endblock %}
-
+  
+  <div id="route-container">
+  {% include "home.html" %}
+  {% include "timeline.html" %}
+  </div>
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
@@ -96,6 +96,8 @@
   <!-- jQuery and the wonderful things -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="{% static 'js/routing.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

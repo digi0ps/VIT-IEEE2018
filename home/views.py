@@ -4,8 +4,8 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, "home.html", )
+    return render(request, "base.html", )
 
 
 def timeline(request):
-    return render(request, "timeline.html", )
+    return render(request, "base.html", )
